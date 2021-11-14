@@ -82,3 +82,44 @@ export async function getStaticProps() {
 
 export default HomePage;
 ```
+
+## Lets Build it
+---
+
+1. npm run build
+2. look at the terminal output
+   1. it will have a guide that specifies how your pages are rendered
+   2. server-side | serve-side renders at runtime(uses getInitialProps or getServerSideProps)
+   3. static - automatically rendred as static html
+   4. SSG - autogen with static html + JSON uses getStaticProps
+   5. ISR - incremental static regen (uses revalidate in getStaticProps)
+
+3. if we run npm start not the npm dev we will server our .next pages files that are being prerendered and not our development directory
+
+4. HYDRATION - PreRendered HTML code is connected with the React Application
+
+
+## Using ISR
+--
+
+1. What is ISR?
+   1. Using incremental static generation
+      1. you don't just generate your page at build time
+      2. continusily generates your page, on every request
+      3. at most every X seconds
+         1. Serve 'old' page if regeneration is not needed yet
+         2. Generate, store and server 'new' page otherwise
+
+2. revalidate
+   1. if we add revalidate to have our props object insdie our getStaticProps
+   2. we can append how many seconds at most we want to revalidate our data.
+      1. ``revalidate: 60`` for example
+      2. For highly dynamic content lower seconds is ideal 
+      3. revalidate in dev will always regnerate immediately basically it does nothing; but production revalidate will fire as per your configuration.
+
+3. Now if we run npm run build
+   1. we can see ISR / 60 seconds
+   2. npm start to start our build
+   3. now if we visit our localhost and reload after our revalidate time
+   4. we will get re-generating to show you that it runs again.
+
