@@ -277,3 +277,4 @@ This is a react hook developed by tbe nextjs team.
 What is SWR?
 - Stale while revalidate
 - npm i swr to install the hook
+
