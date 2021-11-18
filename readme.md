@@ -266,3 +266,14 @@ Some Data doesn't need to be pre-rendered
 ---
 
 1. First we will create a new page aka route
+
+
+
+## SWR HOOK
+---
+
+This is a react hook developed by tbe nextjs team.
+
+What is SWR?
+- Stale while revalidate
+- npm i swr to install the hook
