@@ -244,4 +244,25 @@ What is fallback?
 Lets try to view a page now that doesn't exist, say p4
 
 1. we don't have a product w/ this page, so we get the 404.
-2. 
+2
+
+## Client-side Data Fetching
+---
+Some Data doesn't need to be pre-rendered
+
+- Data Changing with High Frequency
+  - eg stock data
+- Highly User-specific data
+  - eg last orders in a online shop
+- Parial Data
+  - Data thats only used on part of a page
+
+- Pre-fetching data for page generation might not work or be required
+  - 'Traditional" client-side data fetching 
+    - eg useEffect() with fetch()
+
+
+## implementing Client-Side Fetching
+---
+
+1. First we will create a new page aka route
